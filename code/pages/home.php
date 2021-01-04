@@ -69,8 +69,8 @@ $userid = $_SESSION['user_Id'];
     	<hr>
         <?php  include "../functions/db.php";
 
-        $sel = mysql_query("SELECT * from category");
-        while($row=mysql_fetch_assoc($sel)){
+        $sel = mysqli_query($con,"SELECT * from category");
+        while($row=mysqli_fetch_assoc($sel)){
             extract($row);
            echo '<div class="panel panel-success">
                     <div class="panel-heading">
@@ -83,8 +83,8 @@ $userid = $_SESSION['user_Id'];
                     <th>Category</th>
                     <th>Action</th>
                     </tr>';
-                    $sel1 = mysql_query("SELECT * from tblpost where cat_id='$cat_id' ");
-                    while($row1=mysql_fetch_assoc($sel1)){
+                    $sel1 = mysqli_query($con,"SELECT * from tblpost where cat_id='$cat_id' ");
+                    while($row1=mysqli_fetch_assoc($sel1)){
                         extract($row1);
                         echo '<tr>';
                         echo '<td>'.$title.'</td>';
@@ -103,9 +103,12 @@ $userid = $_SESSION['user_Id'];
             <div> 
                 <form method="POST" action="question-function.php">
                         
-                         <label>Category</label>
+                        <label>Category</label>
                         <select name="category" class="form-control">
-                            <option></option>
+                            <option>
+                            <option value="pragramming">Volvo</option>
+                            <option value="networking">Saab</option>
+                            </option>
                             <?php $sel = mysql_query("SELECT * from category");
 
                                 if($sel==true){

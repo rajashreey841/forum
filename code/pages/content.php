@@ -82,11 +82,11 @@ $userid = $_SESSION['user_Id'];
                      $id = $_GET['post_id'];
                      
                 
-                $sql = mysql_query("SELECT * from tblpost as tp join category as c on tp.cat_id=c.cat_id where tp.post_Id='$id' ");
+                $sql = mysqli_query($con,"SELECT * from tblpost as tp join category as c on tp.cat_id=c.cat_id where tp.post_Id='$id' ");
                 if($sql==true){
-                  while($row=mysql_fetch_assoc($sql)){
+                  while($row=mysqli_fetch_assoc($sql)){
                     extract($row);
-                    if($user_Id==009){
+                    if($user_Id == 0012){
                        echo "<label>Topic Title: </label> ".$title."<br>";
                        echo "<label>Topic Category: </label> ".$category."<br>";
                        echo "<label>Date time posted: </label> ".$datetime;
@@ -94,8 +94,8 @@ $userid = $_SESSION['user_Id'];
                        echo "<label>Posted By: </label> Admin";
                     }
                     else{
-                      $sel = mysql_query("SELECT * from tbluser where user_Id='$user_Id' ");
-                      while($row=mysql_fetch_assoc($sel)){
+                      $sel = mysqli_query($con,"SELECT * from tbluser where user_Id='$user_Id' ");
+                      while($row=mysqli_fetch_assoc($sel)){
                         extract($row);
                         echo "<label>Topic Title: </label> ".$title."<br>";
                        echo "<label>Topic Category: </label> ".$category."<br>";
@@ -118,10 +118,10 @@ $userid = $_SESSION['user_Id'];
               <div id="comments">
               <?php 
               $postid= $_GET['post_id'];
-              $sql = mysql_query("SELECT * from tblcomment as c join tbluser as u on c.user_Id=u.user_Id where post_Id='$postid' order by datetime");
-              $num = mysql_num_rows($sql);
+              $sql = mysqli_query($con,"SELECT * from tblcomment as c join tbluser as u on c.user_Id=u.user_Id where post_Id='$postid' order by datetime");
+              $num = mysqli_num_rows($sql);
               if($num>0){
-              while($row=mysql_fetch_assoc($sql)){
+              while($row=mysqli_fetch_assoc($sql)){
                     echo "<label>Comment by: </label> ".$row['fname']." ".$row['lname']."<br>";
                      echo '<label class="pull-right">'.$row['datetime'].'</label>';
                      echo "<p class='well'>".$row['comment']."</p>";
