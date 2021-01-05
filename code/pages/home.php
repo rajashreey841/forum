@@ -43,7 +43,7 @@ $userid = $_SESSION['user_Id'];
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">CSIT FORUM</a>
+                <a class="navbar-brand" href="home.php">VIT FORUM</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
@@ -106,13 +106,13 @@ $userid = $_SESSION['user_Id'];
                         <label>Category</label>
                         <select name="category" class="form-control">
                             <option>
-                            <option value="pragramming">Volvo</option>
-                            <option value="networking">Saab</option>
+                            <option value="pragramming">programming</option>
+                            <option value="networking">networking</option>
                             </option>
-                            <?php $sel = mysql_query("SELECT * from category");
+                            <?php $sel = mysqli_query($con,"SELECT * from category");
 
                                 if($sel==true){
-                                    while($row=mysql_fetch_assoc($sel)){
+                                    while($row=mysqli_fetch_assoc($sel)){
                                         extract($row);
                                         echo '<option value='.$cat_id.'>'.$category.'</option>';
                                     }

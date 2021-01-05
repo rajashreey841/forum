@@ -44,7 +44,7 @@ $userid = $_SESSION['user_Id'];
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">CSIT FORUM</a>
+                <a class="navbar-brand" href="home.php">VIT FORUM</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">

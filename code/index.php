@@ -30,7 +30,7 @@
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
             <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">CSIT FORUM</a>
+                <a class="navbar-brand" href="home.php">VIT FORUM</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,19 +56,14 @@
     </nav>
 			<div class="container" style="margin:8% auto;">
 				<div class="col-sm-4 col-md-3">
-					<h2>Discuss with your friends</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h1>Discuss with peoples</h1>
+					<img src="images\logo.jpg" alt="Trulli" width="500" height="333">
 				</div>
 				 <div class="col-sm-5 col-md-4 pull-right">
                    <div class="row">
                    
 						<form method="POST" class="form-signin" action="functions/register.php">
-								<h3 class="text-center">Signup Here!</h3>
+								<h3 class="text-center">Register Here!</h3>
 							<input type="text" name="fname"placeholder="First Name"class="form-control" required>
 							<input type="text" name="lname"placeholder="Last Name"class="form-control" required>
 							<select class="form-control" name="gender"required>
