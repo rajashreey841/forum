@@ -79,9 +79,9 @@ $uname=$_SESSION['uname'];
                             include "../functions/db.php";
 
                             $sql = "SELECT * FROM tblpost as tp join category as c on tp.cat_id=c.cat_id ORDER BY `datetime` ASC LIMIT 5";
-                            $run = mysql_query($sql);
+                            $run = mysqli_query($con,$sql);
 
-                            while($row=mysql_fetch_array($run))
+                            while($row=mysqli_fetch_array($run))
                             {
                                 $id = $row['post_Id'];
                                 echo "<tr>";
