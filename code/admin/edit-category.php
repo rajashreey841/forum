@@ -83,8 +83,8 @@ $uname=$_SESSION['uname'];
                         <label>Category</label>
                         <?php include "../functions/db.php";
                         $cat_id = $_GET['cat_id'];
-                        $sel = mysql_query("SELECT * from category where cat_id='$cat_id' ");
-                        while($row=mysql_fetch_assoc($sel)){
+                        $sel = mysqli_query($con,"SELECT * from category where cat_id='$cat_id' ");
+                        while($row=mysqli_fetch_assoc($sel)){
                           extract($row);
                          echo  '<input type="text" class="form-control" name="category" required style="width:50%" value='.$category.'>';
                         }
@@ -104,7 +104,7 @@ $uname=$_SESSION['uname'];
     if(isset($_POST['submit'])){
       $category = $_POST['category'];
       $cat_id = $_GET['cat_id'];
-      $update = mysql_query("UPDATE category set category='$category' where cat_id='$cat_id' ");
+      $update = mysqli_query($con,"UPDATE category set category='$category' where cat_id='$cat_id' ");
       header("Location:category.php");
     }
 

@@ -83,9 +83,9 @@ $uname=$_SESSION['uname'];
                             include "../functions/db.php";
 
                             $sql = "SELECT * from category";
-                            $run = mysql_query($sql);
+                            $run = mysqli_query($con,$sql);
 
-                            while($row=mysql_fetch_array($run))
+                            while($row=mysqli_fetch_array($run))
                             {
                                 extract($row);
                                 echo "<tr>";

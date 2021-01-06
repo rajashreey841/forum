@@ -89,9 +89,9 @@ $uname=$_SESSION['uname'];
                      }
                                       
                   $sql = "SELECT * FROM tblpost as tp join category as c on tp.cat_id=c.cat_id WHERE tp.post_Id='$id'";
-                            $run = mysql_query($sql);
+                            $run = mysqli_query($con,$sql);
 
-                            while($row=mysql_fetch_array($run))
+                            while($row=mysqli_fetch_array($run))
                             {
                                 $id = $row['post_Id'];
                        
@@ -102,13 +102,13 @@ $uname=$_SESSION['uname'];
                  
                             }
                              extract($_POST);
-                               date_default_timezone_set("Asia/Taipei");
-                             $datetime=date("Y-m-d h:i:sa");
+                               date_default_timezone_set("Asia/Kolkata");
+                             $datetime=date('d-m-Y H:i:s');
 
                              if(isset($edit))
                              {
                                 $sql = "UPDATE `tblpost` SET `title`='$title',`content`='$content',`category`='$category',`datetime`='$datetime' WHERE `post_Id`='$id'";
-                               $run = mysql_query($sql);
+                               $run = mysqli_query($con,$sql);
                              
                             if($run==true)
                             {

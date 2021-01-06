@@ -7,12 +7,12 @@
     $pwd = $_POST['pwd'];
 	//$pwd = md5($password);
 
-	$uname = mysql_real_escape_string($_POST['uname']);
-    $pwd = mysql_real_escape_string($_POST['pwd']);
+	$uname = mysqli_real_escape_string($con,$_POST['uname']);
+    $pwd = mysqli_real_escape_string($con,$_POST['pwd']);
 
     $query = "SELECT * FROM tbladmin WHERE uname = '$uname' AND pwd = '$pwd'";
-    $result = mysql_query($query) or die ("Verification error");
-    $array = mysql_fetch_array($result);
+    $result = mysqli_query($con,$query) or die ("Verification error");
+    $array = mysqli_fetch_array($result);
     
     if ($array['uname'] == $uname){
         $_SESSION['uname'] = $uname;

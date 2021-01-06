@@ -56,7 +56,7 @@
     </nav>
 			<div class="container" style="margin:8% auto;">
 				<div class="col-sm-4 col-md-3">
-					<h1>Discuss with peoples</h1>
+					<h4>Discussion With Peoples</h4>
 					<img src="images\logo.jpg" alt="Trulli" width="500" height="333">
 				</div>
 				 <div class="col-sm-5 col-md-4 pull-right">

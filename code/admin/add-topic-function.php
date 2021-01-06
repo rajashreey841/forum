@@ -1,11 +1,11 @@
 <?php
 include "../functions/db.php";
- 					date_default_timezone_set("Asia/Taipei");
-                        $datetime=date("Y-m-d h:i:sa");
+ 					date_default_timezone_set("Asia/Kolkata");
+                        $datetime=date("d-m-Y H:i:s");
 extract($_POST);
 $user_Id = 0012;
 $sql = "INSERT INTO tblpost(title, content, cat_id, datetime , user_Id) VALUES ('$title','$content','$category','$datetime','$user_Id')";
-$res = mysql_query($sql);
+$res = mysqli_query($con,$sql);
 
 header("Location:post.php");
 

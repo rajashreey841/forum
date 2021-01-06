@@ -88,9 +88,9 @@ $uname=$_SESSION['uname'];
                      }
                                       
                   $sql = "SELECT * FROM tblpost as tp join category as c on tp.cat_id=c.cat_id WHERE tp.post_Id='$id'";
-                            $run = mysql_query($sql);
+                            $run = mysqli_query($con,$sql);
 
-                            while($row=mysql_fetch_array($run))
+                            while($row=mysqli_fetch_array($run))
                             {
                                 $id = $row['post_Id'];
                        

@@ -100,38 +100,42 @@ $userid = $_SESSION['user_Id'];
         }
         ?>
         <div class="my-quest" id="quest">
-            <div>
-                <form method="POST" action="question-function.php">
+    <div>
+      <form method="POST" action="question-function.php">
 
-                    <label>Category</label>
-                    <select name="category" class="form-control">
-                        <option>
-                        <option value="pragramming">programming</option>
-                        <option value="networking">networking</option>
-                        </option>
-                        <?php $sel = mysqli_query($con, "SELECT * from category");
-
-                        if ($sel == true) {
-                            while ($row = mysqli_fetch_assoc($sel)) {
-                                extract($row);
-                                echo '<option value=' . $cat_id . '>' . $category . '</option>';
-                            }
-                        }
-                        ?>
-                    </select>
-                    <label>Topic Title</label>
-                    <input type="text" class="form-control" name="title" required>
-                    <label>Content</label>
-                    <textarea name="content" class="form-control">
-                        </textarea>
-                    <br>
-                    <input type="hidden" name="userid" value=<?php echo $userid; ?>>
-                    <input type="submit" class="btn btn-success pull-right" value="Post">
-                </form><br>
-                <hr>
-                <a href="" class="pull-right">Close</a>
-            </div>
-        </div>
+        <label>Category</label>
+        <select name="category" class="form-control">
+          <option></option>
+          <option value=1>Networking</option>
+          <option value=2>Project</option>
+          <option value=3>Programming</option>
+          <option value=4>Multimedia</option>
+          <option value=5>Artificial Intelligence</option>
+          <option value=6>Operating Systems</option>
+          <option value=7>Externals</option>
+          <option value=8>Holidays</option>
+          <option value=9>Notice Board</option>
+          <option value=10>Fee Payments</option>
+          <option value=11>Hackathon</option>
+          <option value=12>Sports Day</option>
+          <option value=13>Ethnic Day</option>
+          <option value=14>Internals</option>
+          <option value=15>Lab Exams</option>
+          <option value=16>Microcontrollers</option>
+          <option value=17>Aerodynamics</option>
+          <option value=18>Mechanics of Materials</option>
+        </select>
+        <label>Topic Title</label>
+        <input type="text" class="form-control" name="title" required>
+        <label>Content</label>
+        <input type="text" class="form-control" name="content" required>
+        <br>
+        <input type="submit" class="btn btn-success pull-right" value="Post">
+        <a class="btn btn-fail pull-right" href="" class="pull-right">Close</a>
+      </form><br>
+      <hr>
+    </div>
+  </div>
 
 
 

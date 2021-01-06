@@ -66,9 +66,9 @@ $userid = $_SESSION['user_Id'];
     <h4>Latest Discussion</h4>
     <hr>
     <div class="panel panel-success">
-      <div class="panel-heading">
+      <!-- <div class="panel-heading">
         <h3 class="panel-title">Programming</h3>
-      </div>
+      </div> -->
       <div class="panel-body">
 
 
@@ -144,9 +144,24 @@ $userid = $_SESSION['user_Id'];
         <label>Category</label>
         <select name="category" class="form-control">
           <option></option>
-          <option value=1>Programming</option>
-          <option value=2>Multimedia</option>
-          <option value=6>Computer Networking</option>
+          <option value=1>Networking</option>
+          <option value=2>Project</option>
+          <option value=3>Programming</option>
+          <option value=4>Multimedia</option>
+          <option value=5>Artificial Intelligence</option>
+          <option value=6>Operating Systems</option>
+          <option value=7>Externals</option>
+          <option value=8>Holidays</option>
+          <option value=9>Notice Board</option>
+          <option value=10>Fee Payments</option>
+          <option value=11>Hackathon</option>
+          <option value=12>Sports Day</option>
+          <option value=13>Ethnic Day</option>
+          <option value=14>Internals</option>
+          <option value=15>Lab Exams</option>
+          <option value=16>Microcontrollers</option>
+          <option value=17>Aerodynamics</option>
+          <option value=18>Mechanics of Materials</option>
         </select>
         <label>Topic Title</label>
         <input type="text" class="form-control" name="title" required>

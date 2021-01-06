@@ -7,8 +7,8 @@ include "../functions/db.php";
 		header("location:index.php");
 	}
 
-	$run = mysql_query("DELETE FROM tblpost WHERE post_Id = '$id'")
-	or die(mysql_error());  	
+	$run = mysqli_query($con,"DELETE FROM tblpost WHERE post_Id = '$id'")
+	or die(mysqli_error());  	
 
 	header("Location:post.php");
 	
