@@ -103,7 +103,7 @@ $uname=$_SESSION['uname'];
                             }
                              extract($_POST);
                                date_default_timezone_set("Asia/Kolkata");
-                             $datetime=date('d-m-Y H:i:s');
+                             $datetime=date('Y-m-d H:i:s');
 
                              if(isset($edit))
                              {

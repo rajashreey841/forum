@@ -2,7 +2,8 @@
 
 include "../functions/db.php";
 date_default_timezone_set('Asia/Kolkata');
-$datetime =  date('d-m-Y H:i:s');
+$datetime =  date('Y-m-d H:i:s');
+echo 'alert("Posted Successfully")';
 
 
 extract($_POST);
@@ -60,10 +61,13 @@ else if($category === '17') {
 else if($category === '18') {
         $category_id = 18;
 }
+echo '<script type="text/javascript">alert("'.$datetime.'");</script>';
 $sql = "INSERT INTO `tblpost`(`title`, `content`, `datetime`, `cat_id`, `user_Id`) VALUES ('$title','$content', '$datetime', $category_id, 'raji')";
+echo '<script type="text/javascript">alert("'.$sql.'");</script>';
 $res = mysqli_query($con, $sql);
 
 if ($res == true) {
+        echo "Study PHP at " . $datetime ;
         echo '<script language="javascript">';
         echo 'alert("Posted Successfully")';
         echo '</script>';
